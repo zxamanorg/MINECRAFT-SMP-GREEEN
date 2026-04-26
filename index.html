@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hena Mobile Repairing | Fast & Trusted Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f3f4f6;
+            --white: #ffffff;
+            --error-bg: #fee2e2;
+            --error-text: #b91c1c;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Header & Navbar */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover::after { width: 100%; }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 20px 100px;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #4b5563;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 32px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about { padding: 80px 0; background: var(--white); }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text { flex: 1; }
+        .about-text h3 { font-size: 24px; margin-bottom: 15px; }
+        .about-text p { margin-bottom: 15px; color: #4b5563; }
+        .owner-badge {
+            display: inline-block;
+            background: var(--light-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* Services Section */
+        .services { padding: 80px 0; }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 { margin-bottom: 10px; }
+        .service-card p { color: #6b7280; font-size: 14px; }
+
+        /* Booking Section */
+        .booking { padding: 80px 0; background: var(--white); }
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group.full-width { grid-column: span 2; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+            outline: none;
+            background: var(--white);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        
+        .form-control.input-error {
+            border-color: var(--error-text);
+            box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15);
+        }
+
+        textarea.form-control { resize: vertical; height: 100px; }
+
+        /* Alert Messages */
+        .msg-box {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .success-msg { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
+        .error-msg { background: var(--error-bg); color: var(--error-text); border-left: 4px solid var(--error-text); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Contact Section */
+        .contact { padding: 80px 0; text-align: center; }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .contact-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            min-width: 250px;
+            flex: 1;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .contact-card:hover { transform: translateY(-5px); box-shadow: var(--hover-shadow); }
+        .contact-card i { font-size: 30px; color: var(--primary-color); margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+
+        /* Floating Buttons */
+        .float-wa, .float-call {
+            position: fixed;
+            bottom: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #FFF;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: var(--transition);
+        }
+        .float-wa { background-color: #25d366; right: 30px; }
+        .float-wa:hover { background-color: #128C7E; transform: scale(1.1); }
+        
+        .float-call { display: none; background-color: var(--primary-color); left: 30px; }
+        .float-call:hover { background-color: #1d4ed8; transform: scale(1.1); }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                text-align: center;
+                padding: 30px 0;
+                box-shadow: 0 10px 10px -5px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                gap: 20px;
+            }
+            .nav-links.active { left: 0; }
+            .menu-toggle { display: block; }
+            
+            .hero { padding: 140px 20px 80px; }
+            .hero h1 { font-size: 36px; }
+            .hero-btns { flex-direction: column; }
+            
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            
+            .contact-card { min-width: 100%; }
+            .float-call { display: flex; } /* Show call button on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-mobile-screen-button"></i> Hena Mobile
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to <span>Hena Mobile Repairing</span></h1>
+            <p>Your trusted, fast, and reliable local destination for all smartphone and tablet repairing services. We bring dead devices back to life!</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+                <a href="https://wa.me/919332227436" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Premium Mobile Repairing Shop</h3>
+                    <p>At Hena Mobile Repairing, we understand how important your smartphone is to your daily life. That's why we offer fast, reliable, and affordable repair services. From shattered screens to dead batteries and complex software issues, we have the expertise to fix it all.</p>
+                    <p>We pride ourselves on using high-quality parts and providing transparent pricing. Customer satisfaction is our top priority.</p>
+                    <div class="owner-badge">
+                        <i class="fa-solid fa-user-tie"></i> Managed by: Hamid
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-mobile-screen service-icon"></i>
+                    <h3>Screen Replacement</h3>
+                    <p>Fast and flawless display replacements for cracked or shattered screens.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-battery-full service-icon"></i>
+                    <h3>Battery Replacement</h3>
+                    <p>Get your phone's battery life back to normal with a quick replacement.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-plug service-icon"></i>
+                    <h3>Charging Issues</h3>
+                    <p>Fixing loose ports, slow charging, and completely dead charging ICs.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-microchip service-icon"></i>
+                    <h3>Software Fixing</h3>
+                    <p>Flashing, unlocking, boot-loop fixes, and OS updates for all brands.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-camera service-icon"></i>
+                    <h3>Camera Repair</h3>
+                    <p>Lens replacement and focusing issue resolution for perfect photos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-volume-high service-icon"></i>
+                    <h3>Speaker / Mic</h3>
+                    <p>Clear out audio issues, low volume, or completely dead earpieces.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-droplet service-icon"></i>
+                    <h3>Water Damage</h3>
+                    <p>Professional chemical cleaning and motherboard repair for liquid damage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book a Repair</h2>
+            <div class="booking-container">
+                
+                <div id="success-message" class="msg-box success-msg">
+                    <i class="fa-solid fa-circle-check"></i> Perfect! Redirecting to WhatsApp to complete your booking...
+                </div>
+                <div id="error-message" class="msg-box error-msg">
+                    <i class="fa-solid fa-circle-exclamation"></i> <span id="error-text">Please fill out the form correctly.</span>
+                </div>
+
+                <form id="booking-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number (10 Digits)</label>
+                            <input type="number" id="mobile" class="form-control" placeholder="e.g., 9876543210" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Device Brand</label>
+                            <input type="text" id="brand" class="form-control" placeholder="e.g., Apple, Samsung" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Device Model</label>
+                            <input type="text" id="model" class="form-control" placeholder="e.g., iPhone 13, Galaxy S21" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="problem">Problem Type</label>
+                            <select id="problem" class="form-control" required>
+                                <option value="" disabled selected>Select an issue...</option>
+                                <option value="Screen Replacement">Screen Replacement</option>
+                                <option value="Battery Replacement">Battery Replacement</option>
+                                <option value="Charging Issue">Charging Issue</option>
+                                <option value="Software Issue">Software Issue</option>
+                                <option value="Camera Repair">Camera Repair</option>
+                                <option value="Speaker/Mic">Speaker/Mic Repair</option>
+                                <option value="Water Damage">Water Damage</option>
+                                <option value="Other">Other Issue</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="address">Your Address</label>
+                            <input type="text" id="address" class="form-control" placeholder="Enter your full address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="notes">Extra Notes (Optional)</label>
+                            <textarea id="notes" class="form-control" placeholder="Any specific details about the problem..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; font-size: 18px;">
+                        <i class="fa-brands fa-whatsapp"></i> Apply & Book via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Have questions? Reach out to us directly!</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p><strong>9332227436</strong></p>
+                    <p style="font-size: 14px; color: #6b7280; margin-top: 10px; font-weight: 500;">Available 11 AM - 11 PM</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                    <h3>WhatsApp</h3>
+                    <p><strong>9332227436</strong></p>
+                    <a href="https://wa.me/919332227436" target="_blank" class="btn btn-whatsapp" style="margin-top: 15px; padding: 8px 20px;">Chat Now</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Visit Shop</h3>
+                    <p><strong>Hena Mobile Repairing</strong></p>
+                    <p style="font-size: 14px; color: #6b7280; margin-top: 5px;">[Your Shop Address Here]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Hena Mobile Repairing | Managed by Hamid | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919332227436" class="float-wa" target="_blank" title="WhatsApp Us">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919332227436" class="float-call" title="Call Us">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Date restriction (prevent selecting past dates)
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Utility to clear errors
+        function clearErrors() {
+            document.querySelectorAll('.form-control').forEach(el => el.classList.remove('input-error'));
+            document.getElementById('error-message').style.display = 'none';
+        }
+
+        // Form Validation & Submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            clearErrors();
+
+            // Fetch Fields
+            const name = document.getElementById('name');
+            const mobile = document.getElementById('mobile');
+            const brand = document.getElementById('brand');
+            const model = document.getElementById('model');
+            const problem = document.getElementById('problem');
+            const address = document.getElementById('address');
+            const date = document.getElementById('date');
+            const notes = document.getElementById('notes').value || "None";
+            
+            let hasError = false;
+            let errorMsgText = "";
+
+            // 1. Validate Mobile Number (Must be exactly 10 digits)
+            const mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(mobile.value)) {
+                hasError = true;
+                mobile.classList.add('input-error');
+                errorMsgText = "Mobile number must be exactly 10 digits.";
+            }
+
+            // 2. Validate Brand & Model (Must be realistic, not just 1 random letter)
+            else if (brand.value.trim().length < 2) {
+                hasError = true;
+                brand.classList.add('input-error');
+                errorMsgText = "Please enter a valid Device Brand.";
+            }
+            else if (model.value.trim().length < 2) {
+                hasError = true;
+                model.classList.add('input-error');
+                errorMsgText = "Please enter a valid Device Model.";
+            }
+
+            // If there's an error, show it and STOP submission
+            if (hasError) {
+                const errorDiv = document.getElementById('error-message');
+                document.getElementById('error-text').innerText = errorMsgText;
+                errorDiv.style.display = 'block';
+                
+                // Scroll to error message gently
+                errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return; 
+            }
+
+            // Format message if Validation Passes
+            const waMessage = `*New Repair Booking!*%0A%0A*Name:* ${name.value.trim()}%0A*Number:* ${mobile.value.trim()}%0A*Brand:* ${brand.value.trim()}%0A*Model:* ${model.value.trim()}%0A*Problem:* ${problem.value}%0A*Address:* ${address.value.trim()}%0A*Date:* ${date.value}%0A*Notes:* ${notes.trim()}`;
+
+            // Show success message
+            const successMsg = document.getElementById('success-message');
+            successMsg.style.display = 'block';
+
+            // Wait 1.5s then redirect to WhatsApp
+            setTimeout(() => {
+                const waNumber = "919332227436";
+                const waURL = `https://wa.me/${waNumber}?text=${waMessage}`;
+                window.open(waURL, '_blank');
+                
+                // Reset form
+                document.getElementById('booking-form').reset();
+                successMsg.style.display = 'none';
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
